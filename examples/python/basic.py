@@ -14,22 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/regextester'
 
 def call_regextester_api():
     """
-    Make a POST request to the Regex Tester API
+    Make a GET request to the Regex Tester API
     """
     try:
-        # Request body
-        request_body &#x3D; {
-    &#x27;pattern&#x27;: &#x27;\\d{3}-\\d{2}-\\d{4}&#x27;,
-    &#x27;text&#x27;: &#x27;My SSN is 123-45-6789 and my friend&#x27;s is 987-65-4321&#x27;,
-    &#x27;flags&#x27;: &#x27;g&#x27;
-}
-
         headers = {
-            'x-api-key': API_KEY,
-            'Content-Type': 'application/json'
+            'x-api-key': API_KEY
         }
 
-        response = requests.post(API_URL, headers=headers, json=request_body)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
