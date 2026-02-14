@@ -1,9 +1,18 @@
 {
   "name": "@apiverve/regextester",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Regex Tester is a comprehensive tool for testing and validating regular expressions. It supports multiple operations (test, match, search, replace, split) with detailed performance analysis and pattern suggestions.",
   "main": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "mocha",
     "example": "node examples/basic.js"
@@ -14,14 +23,18 @@
     "directory": "npm"
   },
   "keywords": [
-    "regex", "regular expression", "regex tester", "regex validator", "pattern matching"
+    ""
   ],
-  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "author": {
+    "name": "APIVerve",
+    "email": "hello@apiverve.com",
+    "url": "https://apiverve.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/apiverve/regextester-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/regextester?utm_source=npm",
+  "homepage": "https://apiverve.com/marketplace/regextester?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
