@@ -1,1 +1,3 @@
-from .apiClient import RegextesterAPIClient
+from .apiClient import RegextesterAPIClient, RegextesterAPIClientError
+
+__all__ = ['RegextesterAPIClient', 'RegextesterAPIClientError']
