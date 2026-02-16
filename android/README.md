@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:regextester-api:1.1.13'
+    implementation 'com.github.apiverve:regextester-api:1.1.14'
 }
 ```
 
@@ -48,8 +48,8 @@ try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
     parameters.put("pattern", "\d{3}-\d{2}-\d{4}");
-    parameters.put("text", "My SSN is 123-45-6789");
-    parameters.put("flags", "gi");
+    parameters.put("text", "My SSN is 123-45-6789 and my friend's is 987-65-4321");
+    parameters.put("flags", "g");
     parameters.put("test_type", "test");
     parameters.put("replacement", "[REDACTED]");
 
