@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/regextester",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Regex Tester is a comprehensive tool for testing and validating regular expressions. It supports multiple operations (test, match, search, replace, split) with detailed performance analysis and pattern suggestions.",
   "main": "index.js",
   "types": "index.d.ts",
