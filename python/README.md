@@ -44,7 +44,11 @@ from apiverve_regextester.apiClient import RegextesterAPIClient
 # Initialize the client with your APIVerve API key
 api = RegextesterAPIClient("[YOUR_API_KEY]")
 
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 ```
 
 ###### Simple Request
@@ -398,7 +406,11 @@ from apiverve_regextester.apiClient import RegextesterAPIClient, RegextesterAPIC
 
 api = RegextesterAPIClient("[YOUR_API_KEY]")
 
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 
 try:
     result = api.execute(query)
@@ -419,7 +431,11 @@ from apiverve_regextester.apiClient import RegextesterAPIClient, RegextesterAPIC
 
 api = RegextesterAPIClient("[YOUR_API_KEY]")
 
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 
 try:
     result = api.execute(query)
@@ -453,7 +469,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_regextester.apiClient import RegextesterAPIClient, RegextesterAPIClientError
 
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 
 # Using context manager ensures proper cleanup
 with RegextesterAPIClient("[YOUR_API_KEY]") as api:
@@ -479,7 +499,11 @@ from apiverve_regextester.apiClient import RegextesterAPIClient
 # Enable debug mode
 api = RegextesterAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -494,8 +518,13 @@ from apiverve_regextester.apiClient import RegextesterAPIClient
 
 api = RegextesterAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "pattern": "\d{3}-\d{2}-\d{4}",
+    "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321",
+    "flags": "g"
+}
+
 try:
-    query = { "pattern": "\\d{3}-\\d{2}-\\d{4}", "text": "My SSN is 123-45-6789 and my friend's is 987-65-4321", "flags": "g" }
     result = api.execute(query)
     print(result)
 finally:
