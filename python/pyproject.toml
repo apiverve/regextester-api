@@ -1,6 +1,6 @@
 [project]
 name = "apiverve-regextester"
-version = "1.1.13"
+version = "1.1.14"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
@@ -8,7 +8,7 @@ description = "Regex Tester is a comprehensive tool for testing and validating r
 keywords = []
 readme = "README.md"
 requires-python = ">=3.7"
-license = "MIT"
+license = {text = "MIT"}
 dependencies = [
     "requests>=2.25.0"
 ]
