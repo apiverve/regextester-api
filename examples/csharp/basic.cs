@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/regextester";
 
         /// <summary>
-        /// Make a GET request to the Regex Tester API
+        /// Make a POST request to the Regex Tester API
         /// </summary>
         static async Task<JsonDocument> CallRegexTesterAPI()
         {
@@ -29,7 +29,13 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Request body
+                var requestBody &#x3D; new { pattern &#x3D; &quot;\d{3}-\d{2}-\d{4}&quot;, text &#x3D; &quot;My SSN is 123-45-6789 and my friend&#x27;s is 987-65-4321&quot;, flags &#x3D; &quot;g&quot; };
+
+                var jsonContent = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(API_URL, content);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
