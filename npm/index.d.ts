@@ -4,35 +4,47 @@ declare module '@apiverve/regextester' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface regextesterResponse {
     status: string;
     error: string | null;
     data: RegexTesterData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface RegexTesterData {
-      pattern:         string;
-      text:            string;
-      flags:           string;
-      testType:        string;
+      pattern:         null | string;
+      text:            null | string;
+      flags:           null | string;
+      testType:        null | string;
       replacement:     null;
-      isValidRegex:    boolean;
+      isValidRegex:    boolean | null;
       regexInfo:       RegexInfo;
       testResults:     TestResults;
       performance:     Performance;
       patternAnalysis: PatternAnalysis;
-      suggestions:     string[];
+      suggestions:     (null | string)[];
       commonPatterns:  CommonPattern[];
       regexGuide:      RegexGuide;
   }
   
   interface CommonPattern {
-      name:        string;
-      pattern:     string;
-      description: string;
-      example:     string;
+      name:        null | string;
+      pattern:     null | string;
+      description: null | string;
+      example:     null | string;
   }
   
   interface PatternAnalysis {
@@ -44,42 +56,42 @@ declare module '@apiverve/regextester' {
   }
   
   interface ContainsAnchors {
-      startAnchor:  boolean;
-      endAnchor:    boolean;
-      wordBoundary: boolean;
+      startAnchor:  boolean | null;
+      endAnchor:    boolean | null;
+      wordBoundary: boolean | null;
   }
   
   interface ContainsCharacterClasses {
-      predefinedClasses: boolean;
-      customClasses:     boolean;
-      negatedClasses:    boolean;
+      predefinedClasses: boolean | null;
+      customClasses:     boolean | null;
+      negatedClasses:    boolean | null;
   }
   
   interface ContainsGroups {
-      capturingGroups:    number;
-      nonCapturingGroups: number;
-      namedGroups:        number;
+      capturingGroups:    number | null;
+      nonCapturingGroups: number | null;
+      namedGroups:        number | null;
   }
   
   interface ContainsQuantifiers {
-      zeroOrMore:    boolean;
-      oneOrMore:     boolean;
-      zeroOrOne:     boolean;
-      specificCount: boolean;
-      rangeCount:    boolean;
+      zeroOrMore:    boolean | null;
+      oneOrMore:     boolean | null;
+      zeroOrOne:     boolean | null;
+      specificCount: boolean | null;
+      rangeCount:    boolean | null;
   }
   
   interface ContainsSpecialChars {
-      wildcard:        boolean;
-      pipe:            boolean;
-      escapeSequences: number;
+      wildcard:        boolean | null;
+      pipe:            boolean | null;
+      escapeSequences: number | null;
   }
   
   interface Performance {
-      iterations:        number;
-      totalTimeMS:       number;
-      averageTimeMS:     number;
-      performanceRating: string;
+      iterations:        number | null;
+      totalTimeMS:       number | null;
+      averageTimeMS:     number | null;
+      performanceRating: null | string;
   }
   
   interface RegexGuide {
@@ -91,38 +103,38 @@ declare module '@apiverve/regextester' {
   }
   
   interface BasicSyntax {
-      symbol:      string;
-      description: string;
+      symbol:      null | string;
+      description: null | string;
   }
   
   interface Flag {
-      flag:        string;
-      description: string;
+      flag:        null | string;
+      description: null | string;
   }
   
   interface RegexInfo {
-      pattern:       string;
+      pattern:       null | string;
       flags:         Flags;
-      source:        string;
-      lastIndex:     number;
-      patternLength: number;
-      complexity:    string;
+      source:        null | string;
+      lastIndex:     number | null;
+      patternLength: number | null;
+      complexity:    null | string;
   }
   
   interface Flags {
-      global:     boolean;
-      ignoreCase: boolean;
-      multiline:  boolean;
-      sticky:     boolean;
-      unicode:    boolean;
-      dotAll:     boolean;
+      global:     boolean | null;
+      ignoreCase: boolean | null;
+      multiline:  boolean | null;
+      sticky:     boolean | null;
+      unicode:    boolean | null;
+      dotAll:     boolean | null;
   }
   
   interface TestResults {
-      operation:       string;
-      result:          boolean;
-      executionTimeMS: number;
-      description:     string;
+      operation:       null | string;
+      result:          boolean | null;
+      executionTimeMS: number | null;
+      description:     null | string;
   }
 
   export default class regextesterWrapper {
