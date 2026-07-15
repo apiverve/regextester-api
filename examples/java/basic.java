@@ -12,8 +12,14 @@ public class BasicExample {
         RegexTesterAPIClient client = new RegexTesterAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Request body
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;pattern&quot;, &quot;\d{3}-\d{2}-\d{4}&quot;);
+        parameters.put(&quot;text&quot;, &quot;My SSN is 123-45-6789 and my friend&#x27;s is 987-65-4321&quot;);
+        parameters.put(&quot;flags&quot;, &quot;g&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
