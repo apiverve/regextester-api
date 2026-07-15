@@ -9,15 +9,24 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/regextester';
 
 /**
- * Make a GET request to the Regex Tester API
+ * Make a POST request to the Regex Tester API
  */
 async function callRegexTesterAPI() {
   try {
+    // Request body
+    const requestBody &#x3D; {
+    &quot;pattern&quot;: &quot;\\d{3}-\\d{2}-\\d{4}&quot;,
+    &quot;text&quot;: &quot;My SSN is 123-45-6789 and my friend&#x27;s is 987-65-4321&quot;,
+    &quot;flags&quot;: &quot;g&quot;
+};
+
     const response = await fetch(API_URL, {
-      method: 'GET',
+      method: 'POST',
       headers: {
-        'x-api-key': API_KEY
-      }
+        'x-api-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
     });
 
     // Check if response is successful
