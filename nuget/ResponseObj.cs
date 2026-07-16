@@ -25,6 +25,9 @@ namespace APIVerve.API.RegexTester
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -45,7 +48,7 @@ namespace APIVerve.API.RegexTester
         public object Replacement { get; set; }
 
         [JsonProperty("is_valid_regex")]
-        public bool IsValidRegex { get; set; }
+        public bool? IsValidRegex { get; set; }
 
         [JsonProperty("regex_info")]
         public RegexInfo RegexInfo { get; set; }
@@ -105,79 +108,79 @@ namespace APIVerve.API.RegexTester
     public partial class ContainsAnchors
     {
         [JsonProperty("start_anchor")]
-        public bool StartAnchor { get; set; }
+        public bool? StartAnchor { get; set; }
 
         [JsonProperty("end_anchor")]
-        public bool EndAnchor { get; set; }
+        public bool? EndAnchor { get; set; }
 
         [JsonProperty("word_boundary")]
-        public bool WordBoundary { get; set; }
+        public bool? WordBoundary { get; set; }
     }
 
     public partial class ContainsCharacterClasses
     {
         [JsonProperty("predefined_classes")]
-        public bool PredefinedClasses { get; set; }
+        public bool? PredefinedClasses { get; set; }
 
         [JsonProperty("custom_classes")]
-        public bool CustomClasses { get; set; }
+        public bool? CustomClasses { get; set; }
 
         [JsonProperty("negated_classes")]
-        public bool NegatedClasses { get; set; }
+        public bool? NegatedClasses { get; set; }
     }
 
     public partial class ContainsGroups
     {
         [JsonProperty("capturing_groups")]
-        public long CapturingGroups { get; set; }
+        public long? CapturingGroups { get; set; }
 
         [JsonProperty("non_capturing_groups")]
-        public long NonCapturingGroups { get; set; }
+        public long? NonCapturingGroups { get; set; }
 
         [JsonProperty("named_groups")]
-        public long NamedGroups { get; set; }
+        public long? NamedGroups { get; set; }
     }
 
     public partial class ContainsQuantifiers
     {
         [JsonProperty("zero_or_more")]
-        public bool ZeroOrMore { get; set; }
+        public bool? ZeroOrMore { get; set; }
 
         [JsonProperty("one_or_more")]
-        public bool OneOrMore { get; set; }
+        public bool? OneOrMore { get; set; }
 
         [JsonProperty("zero_or_one")]
-        public bool ZeroOrOne { get; set; }
+        public bool? ZeroOrOne { get; set; }
 
         [JsonProperty("specific_count")]
-        public bool SpecificCount { get; set; }
+        public bool? SpecificCount { get; set; }
 
         [JsonProperty("range_count")]
-        public bool RangeCount { get; set; }
+        public bool? RangeCount { get; set; }
     }
 
     public partial class ContainsSpecialChars
     {
         [JsonProperty("wildcard")]
-        public bool Wildcard { get; set; }
+        public bool? Wildcard { get; set; }
 
         [JsonProperty("pipe")]
-        public bool Pipe { get; set; }
+        public bool? Pipe { get; set; }
 
         [JsonProperty("escape_sequences")]
-        public long EscapeSequences { get; set; }
+        public long? EscapeSequences { get; set; }
     }
 
     public partial class Performance
     {
         [JsonProperty("iterations")]
-        public long Iterations { get; set; }
+        public long? Iterations { get; set; }
 
         [JsonProperty("total_time_ms")]
-        public long TotalTimeMs { get; set; }
+        public long? TotalTimeMs { get; set; }
 
         [JsonProperty("average_time_ms")]
-        public long AverageTimeMs { get; set; }
+        public long? AverageTimeMs { get; set; }
 
         [JsonProperty("performance_rating")]
         public string PerformanceRating { get; set; }
@@ -231,10 +234,10 @@ namespace APIVerve.API.RegexTester
         public string Source { get; set; }
 
         [JsonProperty("last_index")]
-        public long LastIndex { get; set; }
+        public long? LastIndex { get; set; }
 
         [JsonProperty("pattern_length")]
-        public long PatternLength { get; set; }
+        public long? PatternLength { get; set; }
 
         [JsonProperty("complexity")]
         public string Complexity { get; set; }
@@ -243,22 +246,22 @@ namespace APIVerve.API.RegexTester
     public partial class Flags
     {
         [JsonProperty("global")]
-        public bool Global { get; set; }
+        public bool? Global { get; set; }
 
         [JsonProperty("ignore_case")]
-        public bool IgnoreCase { get; set; }
+        public bool? IgnoreCase { get; set; }
 
         [JsonProperty("multiline")]
-        public bool Multiline { get; set; }
+        public bool? Multiline { get; set; }
 
         [JsonProperty("sticky")]
-        public bool Sticky { get; set; }
+        public bool? Sticky { get; set; }
 
         [JsonProperty("unicode")]
-        public bool Unicode { get; set; }
+        public bool? Unicode { get; set; }
 
         [JsonProperty("dot_all")]
-        public bool DotAll { get; set; }
+        public bool? DotAll { get; set; }
     }
 
     public partial class TestResults
@@ -267,12 +270,24 @@ namespace APIVerve.API.RegexTester
         public string Operation { get; set; }
 
         [JsonProperty("result")]
-        public bool Result { get; set; }
+        public bool? Result { get; set; }
 
         [JsonProperty("execution_time_ms")]
-        public long ExecutionTimeMs { get; set; }
+        public long? ExecutionTimeMs { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
