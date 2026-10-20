@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,8 +24,8 @@ class ValidationError(RegextesterAPIClientError):
 class RegextesterAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "pattern": {"type": "string", "required": True},
-        "text": {"type": "string", "required": True},
+        "pattern": {"type": "string", "required": True, "maxLength": 500},
+        "text": {"type": "string", "required": True, "maxLength": 20000},
         "flags": {"type": "string", "required": False},
         "test_type": {"type": "string", "required": False, "default": "test"},
         "replacement": {"type": "string", "required": False}
