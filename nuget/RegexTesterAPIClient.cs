@@ -67,8 +67,8 @@ namespace APIVerve.API.RegexTester
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "pattern", new ValidationRule { Type = "string", Required = true } },
-            { "text", new ValidationRule { Type = "string", Required = true } },
+            { "pattern", new ValidationRule { Type = "string", Required = true, MaxLength = 500 } },
+            { "text", new ValidationRule { Type = "string", Required = true, MaxLength = 20000 } },
             { "flags", new ValidationRule { Type = "string", Required = false } },
             { "test_type", new ValidationRule { Type = "string", Required = false } },
             { "replacement", new ValidationRule { Type = "string", Required = false } }

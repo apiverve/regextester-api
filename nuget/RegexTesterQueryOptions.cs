@@ -11,13 +11,13 @@ namespace APIVerve.API.RegexTester
     public class RegexTesterQueryOptions
     {
         /// <summary>
-        /// The regular expression pattern to test
+        /// The regular expression pattern to test. Maximum 500 characters
         /// </summary>
         [JsonProperty("pattern")]
         public string Pattern { get; set; }
 
         /// <summary>
-        /// The text to test the pattern against
+        /// The text to test the pattern against. Maximum 20000 characters
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
