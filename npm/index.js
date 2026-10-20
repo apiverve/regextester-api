@@ -30,7 +30,7 @@ class regextesterWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/regextester';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"pattern":{"type":"string","required":true},"text":{"type":"string","required":true},"flags":{"type":"string","required":false},"test_type":{"type":"string","required":false,"default":"test"},"replacement":{"type":"string","required":false}};
+        this.validationRules = {"pattern":{"type":"string","required":true,"maxLength":500},"text":{"type":"string","required":true,"maxLength":20000},"flags":{"type":"string","required":false},"test_type":{"type":"string","required":false,"default":"test"},"replacement":{"type":"string","required":false}};
     }
 
     /**
