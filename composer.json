@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/regextester",
+    "description": "Regex Tester tests regular expressions against input strings across operations like match, search, replace, and split. It reports compilation validity, syntax error details, execution timing, and structural pattern analysis.",
+    "version": "1.2.2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "regextester",
+        "regex",
+        "regular expression",
+        "regex tester",
+        "regex validator",
+        "pattern matching"
+    ],
+    "homepage": "https://apiverve.com/marketplace/regextester?utm_source=php&utm_medium=referral&utm_content=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/regextester",
+        "source": "https://github.com/apiverve/regextester-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Regextester\\": "php/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Regextester\\Tests\\": "php/tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
