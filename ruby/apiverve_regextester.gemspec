@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_regextester"
-  spec.version       = "1.2.2"
+  spec.version       = "1.2.4"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
